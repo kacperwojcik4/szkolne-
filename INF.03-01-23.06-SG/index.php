@@ -13,10 +13,10 @@
 		<h3>Promocja 15% obejmuje artykuły</h3>
 		<ul>
 		<?php
-		$con = mysqli_connect('localhost', 'root', '', 'sklep');
+		$conn = mysqli_connect('localhost', 'root', '', 'sklep');
 		$kw1 = "SELECT nazwa FROM towary WHERE promocja = 1;";
-		$res1 = mysqli_query($con, $kw1);
-		while($tab = mysqli_fetch_row($res1)) {
+		$result = mysqli_query($conn, $kw1);
+		while($tab = mysqli_fetch_row($result)) {
 			echo "<li>$tab[0]</li>";
 		}
 		?>
@@ -49,7 +49,6 @@
 	<div id="prawy">
 		<h3>Kontakt</h3>
 		<p>
-			telefon:123123123<br/>
 			e-mail: <a href="mailto:bok@sklep.pl">bok@sklep.pl</a>
 		</p>
 		<img src="promocja2.png" alt="promocja" />
